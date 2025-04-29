@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { registerLicense } from "@syncfusion/ej2-base";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -23,6 +24,8 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+// Removed duplicate import of registerLicense
+registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY)
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
